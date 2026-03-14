@@ -1,5 +1,5 @@
 FROM node:20-alpine
-RUN npm install -g supergateway coda-mcp
+RUN npm install -g supergateway
 ENV PORT=3000
 EXPOSE 3000
-CMD ["sh", "-c", "API_KEY=${20edd0f6-c760-4f8b-a196-ecafc239ea1b} supergateway --stdio coda-mcp --port 3000 --baseUrl https://coda-mcp-sse-production.up.railway.app"]
+CMD ["sh", "-c", "supergateway --stdio 'npx -y coda-mcp@latest' --port 3000 --baseUrl https://coda-mcp-sse-production.up.railway.app"]
